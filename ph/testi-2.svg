@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="260" viewBox="0 0 360 260">
+<rect width="360" height="260" fill="#141414"></rect>
+<rect x="5" y="5" width="350" height="250" fill="none" stroke="#333" stroke-width="2" stroke-dasharray="9 7" rx="8"></rect>
+<circle cx="180" cy="122" r="34" fill="#a3242b"></circle>
+<path d="M169 105 L198 122 L169 139 Z" fill="#fff"></path>
+<text x="180" y="174" text-anchor="middle" font-family="Montserrat,Arial" font-weight="700" font-size="15" fill="#8a8a8a">Testimonial-Video 2</text>
+<text x="180" y="196" text-anchor="middle" font-family="Montserrat,Arial" font-size="12" fill="#6f6f6f">{{TESTI2_VIDEO}}</text>
+</svg>

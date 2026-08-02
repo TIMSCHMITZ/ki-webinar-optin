@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="210" viewBox="0 0 360 210">
+<rect width="360" height="210" fill="#141414"></rect>
+<rect x="5" y="5" width="350" height="200" fill="none" stroke="#333" stroke-width="2" stroke-dasharray="9 7" rx="8"></rect>
+<circle cx="180" cy="97" r="34" fill="#a3242b"></circle>
+<path d="M169 80 L198 97 L169 114 Z" fill="#fff"></path>
+<text x="180" y="149" text-anchor="middle" font-family="Montserrat,Arial" font-weight="700" font-size="15" fill="#8a8a8a">YouTube-Video 1</text>
+<text x="180" y="171" text-anchor="middle" font-family="Montserrat,Arial" font-size="12" fill="#6f6f6f">{{P3_YT1_THUMB}}</text>
+</svg>

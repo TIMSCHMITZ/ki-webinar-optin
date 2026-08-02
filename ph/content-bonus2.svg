@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="250" viewBox="0 0 360 250">
+<rect width="360" height="250" fill="#141414"></rect>
+<rect x="5" y="5" width="350" height="240" fill="none" stroke="#333" stroke-width="2" stroke-dasharray="9 7" rx="8"></rect>
+<circle cx="180" cy="117" r="34" fill="#a3242b"></circle>
+<path d="M169 100 L198 117 L169 134 Z" fill="#fff"></path>
+<text x="180" y="169" text-anchor="middle" font-family="Montserrat,Arial" font-weight="700" font-size="15" fill="#8a8a8a">Bonus-Video</text>
+<text x="180" y="191" text-anchor="middle" font-family="Montserrat,Arial" font-size="12" fill="#6f6f6f">{{P2_BONUS2_IMAGE}}</text>
+</svg>

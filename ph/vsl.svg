@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="506" viewBox="0 0 900 506">
+<rect width="900" height="506" fill="#141414"></rect>
+<rect x="5" y="5" width="890" height="496" fill="none" stroke="#333" stroke-width="2" stroke-dasharray="9 7" rx="8"></rect>
+<circle cx="450" cy="245" r="34" fill="#a3242b"></circle>
+<path d="M439 228 L468 245 L439 262 Z" fill="#fff"></path>
+<text x="450" y="297" text-anchor="middle" font-family="Montserrat,Arial" font-weight="700" font-size="15" fill="#8a8a8a">VSL / Verkaufsvideo</text>
+<text x="450" y="319" text-anchor="middle" font-family="Montserrat,Arial" font-size="12" fill="#6f6f6f">{{VSL_VIDEO}}</text>
+</svg>
