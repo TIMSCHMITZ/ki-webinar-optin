@@ -4,15 +4,70 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>KI ist Chefsache – Live-Webinar am 02.09.2026</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="fonts/fonts.css"/>
 <link rel="stylesheet" href="funnel.css"/>
 <!-- BRAND TOKENS: per-Kunde ersetzbar ============================== -->
 <style>
   :root{
-    --accent: #B85A3F;
-    --accent-deep: #93482F;
+    --accent: #ad8053;
+    --accent-deep: #8a6440;
+  }
+</style>
+<style id="afq-theme">
+  :root{
+    --ink:       #2e2b29;   /* AFQ ink        – Headlines, Fließtext-Betonung */
+    --ink-soft:  #595550;   /* AFQ ink-soft   – Fließtext */
+    --line:      #e6ded3;   /* warme Linie statt Neutralgrau */
+    --bg:        #faf8f5;   /* AFQ paper      – warmes Off-White */
+    --bg-gray:   #dde8e5;   /* AFQ teal-light – abgesetzte Abschnitte */
+    --bg-black:  #2e2b29;   /* AFQ ink        – kein Schwarz im CI */
+    --good:      #5d8a7e;   /* AFQ ok         – gedeckt, kein Ampelgrün */
+    --radius:    18px;
+  }
+  /* Flächen und Töne, die funnel.css hart setzt */
+  .hero{ background-color:#f3ece3; }                      /* AFQ sand */
+  .badge-free{ background:#e6efec; }                      /* AFQ ok-bg */
+  .site-footer{ color:#d6cec4; }
+  .footer-fine{ color:#a89d90; }
+  .benefit p{ color:#cfc5b8; }
+  .section--black .btn-note{ color:#cfc5b8; }
+  .testi-card .stars{ color:#c8a15f; }                    /* Gold entsättigt */
+  .fnl-field.has-error input{ border-color:#b4694f; }     /* AFQ warn */
+  .fnl-error{ color:#b4694f; }
+  #ac-optin-host ._form_63 ._error,
+  #ac-optin-host ._form_63 ._error-inner{ color:#b4694f !important; }
+</style>
+<style id="mobile-fold">
+  @media (max-width:860px){
+    /* .hero-head, .hero-grid und .hero-right werden aufgeloest (display:contents),
+       damit Eyebrow, Headline, CTA, Live-Demo-Text, Bild und Nutzenpunkte
+       gemeinsam in EINER Flex-Spalte liegen und einzeln sortierbar sind.
+       Vererbte Eigenschaften (text-align:center) laufen weiter durch. */
+    .hero-inner{ display:flex; flex-direction:column; gap:18px; }
+    .hero-head, .hero-grid, .hero-right{ display:contents; }
+
+    .hero-head .eyebrow      { order:1; }
+    .hero-head .h1           { order:2; margin:0; }
+    .hero-right .cta-block   { order:3; margin:0; }   /* <- ueber der Falz */
+    .hero-head .hero-bonus   { order:4; margin:0 auto; }
+    .hero-grid .media-frame  { order:5; }
+    .hero-right .checks      { order:6; text-align:left; }
+
+    /* Platz ueber dem Button sparen */
+    .topbar{ font-size:12.5px; padding:9px 14px; line-height:1.45; }
+    .site-header{ padding:14px 0; }
+    .hero{ padding:18px 0 56px; }
+    .h1{ font-size:clamp(26px,6.8vw,34px); }
+    .hero-bonus{ font-size:14.5px; }
+  }
+  /* Kleine Telefone (iPhone SE & Co.): dort bleiben in Safari nur gut 530 px
+     sichtbar, deshalb noch einmal enger. */
+  @media (max-width:430px){
+    .hero-inner{ gap:14px; }
+    .topbar{ font-size:11.5px; padding:8px 12px; line-height:1.4; }
+    .eyebrow{ font-size:11.5px; letter-spacing:.10em; }
+    .h1{ font-size:clamp(24px,6.4vw,30px); }
+    .hero .btn{ padding:16px 20px; }
   }
 </style>
 </head>
@@ -29,7 +84,7 @@
 </header>
 
 <!-- ============ HERO ============ -->
-<section class="hero" style="background-image:url('ph/hero-bg.svg')">
+<section class="hero" style="background-image:url('img/ki-hero-bg.webp')">
   <div class="wrap hero-inner">
     <div class="hero-head">
       <p class="eyebrow">– Live-Webinar · 02.09.2026 · 19:00 Uhr · 100 % kostenlos –</p>
@@ -38,8 +93,12 @@
     </div>
 
     <div class="hero-grid">
-      <div class="media-frame media-shadow">
-        <img src="ph/hero-media.svg" alt="Vorschau des Live-Webinars KI ist Chefsache"/>
+      <div class="media-frame media-shadow video-embed" data-yt="BMkcND7731k">
+        <button type="button" class="video-embed__play" aria-label="Video abspielen: Webinar 02.09. KI ist Chefsache">
+          <img src="img/video-poster.webp" alt="Stefanie Sonntag und Tim Schmitz im Ankündigungsvideo zum Webinar"/>
+          <span class="video-embed__icon" aria-hidden="true"></span>
+          <span class="video-embed__hint">Video starten — erst dann wird eine Verbindung zu YouTube hergestellt</span>
+        </button>
       </div>
 
       <div class="hero-right">
@@ -50,13 +109,6 @@
         </ul>
         <div class="cta-block">
           <a class="btn" href="seite-2-bridge.html" data-optin>Jetzt kostenlos anmelden<small>Live am 02.09.2026 um 19:00 Uhr – die Plätze sind begrenzt.</small></a>
-        </div>
-        <div class="trust">
-          <img src="ph/trust-1.svg" alt="Trust-Logo 1"/>
-          <img src="ph/trust-2.svg" alt="Trust-Logo 2"/>
-          <img src="ph/trust-3.svg" alt="Trust-Logo 3"/>
-          <img src="ph/trust-4.svg" alt="Trust-Logo 4"/>
-          <img src="ph/trust-5.svg" alt="Trust-Logo 5"/>
         </div>
       </div>
     </div>
@@ -79,7 +131,7 @@
         <p class="note-warn" style="margin-top:18px"><b>Achtung:</b> Das Webinar bringt dir nichts, wenn du keine Mitarbeiter einarbeitest oder führst – oder wenn du nur Theorie sammeln willst, statt etwas umzusetzen.</p>
       </div>
       <div class="media-frame media-shadow">
-        <img src="ph/profit-image.svg" alt="Live-Demo im Webinar"/>
+        <img src="img/ki-profit-image.webp" alt="Werkstattinhaber verfolgt am Laptop ein Webinar und macht sich Notizen"/>
       </div>
     </div>
   </div>
@@ -94,17 +146,17 @@
     </div>
     <div class="three-col">
       <div class="benefit">
-        <div class="ico"><img src="ph/icon-growth.svg" alt=""/></div>
+        <div class="ico"><img src="img/icon-1-live.webp" alt=""/></div>
         <h3 class="h3">KI live in Aktion</h3>
         <p>Kein Blabla, sondern echte Beispiele: Du siehst am Bildschirm, wie aus einem schlechten Prompt ein guter wird – was funktioniert, was nicht, und welches Tool du wofür brauchst.</p>
       </div>
       <div class="benefit">
-        <div class="ico"><img src="ph/icon-handshake.svg" alt=""/></div>
+        <div class="ico"><img src="img/icon-2-onboarding.webp" alt=""/></div>
         <h3 class="h3">Onboarding, das hält</h3>
         <p>Neue Mitarbeiter wissen von Tag 1 an, was läuft – statt dass du wochenlang jeden Handgriff erklärst. Das spart Zeit, Nerven und verhindert Kündigungen in der Probezeit.</p>
       </div>
       <div class="benefit">
-        <div class="ico"><img src="ph/icon-globe.svg" alt=""/></div>
+        <div class="ico"><img src="img/icon-3-vorlagen.webp" alt=""/></div>
         <h3 class="h3">Vorlagen zum Mitnehmen</h3>
         <p>Du gehst nicht mit guten Ideen nach Hause, sondern mit konkreten Prompts, Checklisten und Strukturen, die du morgen schon in deinem Betrieb nutzen kannst.</p>
       </div>
@@ -119,7 +171,7 @@
 <section class="section">
   <div class="wrap">
     <div class="center" style="max-width:820px;margin:0 auto 50px">
-      <h2 class="h2">Das erwartet dich nach deiner kostenlosen Anmeldung:</h2>
+      <h2 class="h2">Das erhältst du, wenn du am 02.09. live dabei bist:</h2>
     </div>
 
     <!-- Hauptinhalt -->
@@ -130,11 +182,10 @@
           <span class="tag-new">(LIVE)</span>
           <p>90 Minuten Live-Demo mit Stefanie und Tim: Onboarding und Führung als System, Claude vs. ChatGPT im direkten Vergleich und Prompts, die vor deinen Augen von schwammig zu brauchbar werden. Mit Zeit für deine Fragen.</p>
           <div class="card-foot">
-            <span class="access"><svg viewBox="0 0 24 24"><path d="M19 18H6a4 4 0 0 1-.6-7.95A5.5 5.5 0 0 1 16.3 9 4 4 0 0 1 19 18Z" opacity=".25"/><path d="M12 9v6m0 0 3-3m-3 3-3-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Im Webinar enthalten</span>
             <span class="badge-free">Kostenlos</span>
           </div>
         </div>
-        <div class="card-img"><img src="ph/content-main.svg" alt="Das Live-Webinar: KI ist Chefsache (90 Minuten)"/></div>
+        <div class="card-img"><img src="img/ki-content-main.webp" alt="Das Live-Webinar: KI ist Chefsache (90 Minuten)"/></div>
       </div>
     </div>
 
@@ -146,32 +197,45 @@
           <span class="tag-new">(PROMPT)</span>
           <p>Der Prompt, mit dem du in 5 Minuten eine komplette Einarbeitungs-Checkliste für jede Position in deinem Betrieb erstellst – statt zwei Stunden zu tippen.</p>
           <div class="card-foot">
-            <span class="access"><svg viewBox="0 0 24 24"><path d="M19 18H6a4 4 0 0 1-.6-7.95A5.5 5.5 0 0 1 16.3 9 4 4 0 0 1 19 18Z" opacity=".25"/><path d="M12 9v6m0 0 3-3m-3 3-3-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Im Webinar enthalten</span>
+            <span class="access"><svg viewBox="0 0 24 24"><path d="M19 18H6a4 4 0 0 1-.6-7.95A5.5 5.5 0 0 1 16.3 9 4 4 0 0 1 19 18Z" opacity=".25"/><path d="M12 9v6m0 0 3-3m-3 3-3-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Erhältst du beim Webinar</span>
             <span class="badge-free">Kostenlos</span>
           </div>
         </div>
-        <div class="card-img"><img src="ph/content-bonus1.svg" alt="Bonus 1: Prompt-Vorlage Onboarding-Checkliste"/></div>
+        <div class="card-img"><img src="img/ki-content-bonus1.webp" alt="Bonus 1: Prompt-Vorlage Onboarding-Checkliste"/></div>
       </div>
     </div>
 
     <!-- Bonus 2 (text only) -->
     <div class="card">
-      <div class="card-row no-img">
+      <div class="card-row">
         <div>
           <h3 class="h3">Bonus 2: Prompt-Vorlage 30-Tage-Plan</h3>
           <p>Der Prompt für einen klaren Tag-für-Tag-Einarbeitungsplan: was dein neuer Mitarbeiter in Woche 1 lernt, was in Woche 2 – bis er selbstständig arbeitet.</p>
+          <div class="card-foot">
+            <span class="access"><svg viewBox="0 0 24 24"><path d="M19 18H6a4 4 0 0 1-.6-7.95A5.5 5.5 0 0 1 16.3 9 4 4 0 0 1 19 18Z" opacity=".25"/><path d="M12 9v6m0 0 3-3m-3 3-3-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Erhältst du beim Webinar</span>
+            <span class="badge-free">Kostenlos</span>
+          </div>
         </div>
+        <div class="card-img"><img src="img/ki-bonus2-plan.webp" alt="Monitor mit einem KI-generierten Vier-Wochen-Plan"/></div>
       </div>
     </div>
 
     <!-- Bonus 3 (text only) -->
     <div class="card">
-      <div class="card-row no-img">
+      <div class="card-row">
         <div>
           <h3 class="h3">Bonus 3: Prompt-Vorlage Arbeitsanweisungen</h3>
           <p>Der Prompt, der dein Kopfwissen in klare Schritt-für-Schritt-Anweisungen verwandelt – damit du nicht mehr jeden Handgriff persönlich erklären musst.</p>
+          <div class="card-foot">
+            <span class="access"><svg viewBox="0 0 24 24"><path d="M19 18H6a4 4 0 0 1-.6-7.95A5.5 5.5 0 0 1 16.3 9 4 4 0 0 1 19 18Z" opacity=".25"/><path d="M12 9v6m0 0 3-3m-3 3-3-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Erhältst du beim Webinar</span>
+            <span class="badge-free">Kostenlos</span>
+          </div>
         </div>
+        <div class="card-img"><img src="img/ki-bonus3-anweisungen.webp" alt="Tablet auf einer Werkbank mit einer KI-generierten Schritt-fuer-Schritt-Anleitung"/></div>
       </div>
+    </div>
+    <!-- Bonus 4 (text only, per apply-webinar-patch.mjs) -->
+    <div class="card">
       <div class="card-row no-img">
         <div>
           <h3 class="h3">Bonus 4: Die Telegram-Community</h3>
@@ -179,6 +243,7 @@
         </div>
       </div>
     </div>
+
 
     <p class="center h3" style="margin:34px 0 30px">… und Zeit für deine Fragen</p>
     <div class="cta-block">
@@ -226,7 +291,7 @@
   <div class="wrap">
     <div class="media-text flip">
       <div class="media-frame">
-        <img src="ph/finalcta-media.svg" alt="Vorschau des Live-Webinars KI ist Chefsache"/>
+        <img src="img/ki-finalcta-media.webp" alt="Betriebsinhaber schliesst am Abend seine Werkstatt ab und geht zum Auto"/>
       </div>
       <div>
         <h2 class="h2">Für alle Chefs, die Führung nicht länger dem Zufall überlassen wollen</h2>
@@ -249,7 +314,7 @@
 <footer class="site-footer">
   <div class="wrap">
     <a class="brand" href="#"><span class="b1">KI IST</span><span class="b2">CHEFSACHE</span></a>
-    <div class="footer-links"><a href="#impressum">Impressum</a> &nbsp;|&nbsp; <a href="#datenschutz">Datenschutz</a></div>
+    <div class="footer-links"><a href="impressum.html">Impressum</a> &nbsp;|&nbsp; <a href="datenschutz.html">Datenschutz</a></div>
     <p class="footer-fine">Diese Website ist kein Teil der Facebook-Website oder von Meta Platforms, Inc. und wird in keiner Weise von Meta unterstützt. Facebook und Instagram sind Marken von Meta Platforms, Inc.<br/>© 2026 Stefanie Sonntag & Tim Schmitz</p>
   </div>
 </footer>
@@ -264,11 +329,114 @@ window.FUNNEL = { optin: {
   emailLabel: "Deine beste E-Mail-Adresse",
   emailPlaceholder: "name@beispiel.de",
   submitLabel: "Jetzt Platz sichern",
-  privacyNote: "100 % kostenlos · Kein Spam · Jederzeit abbestellbar",
+  privacyNote: "100 % kostenlos · Kein Spam · Jederzeit abbestellbar · <a href='datenschutz.html' target='_blank' rel='noopener'>Datenschutz</a>",
   action: "",
   redirect: "seite-2-bridge.html"
 } };
 </script>
 <script src="funnel.js"></script>
+<!-- ActiveCampaign-Optin (Formular 63) — per apply-webinar-patch.mjs -->
+<style>
+  #ac-optin-host[hidden]{ display:none; }
+  .fnl-overlay .fnl-modal{ max-height:92vh; overflow-y:auto; }
+  #ac-optin-host ._form_63{ margin:0 !important; }
+  #ac-optin-host ._form_63 ._form-title,
+  #ac-optin-host ._form_63 ._form-branding{ display:none !important; }
+  /* ÜBERGANGSLÖSUNG: Der erste Block des AC-Formulars ist ein Freitext-Element und
+     enthält aktuell die Beschreibung eines ANDEREN Angebots ("Konsequenzen"-Guide).
+     Er wird ausgeblendet, weil die Überschrift des Modals die Aufgabe übernimmt.
+     Sobald der Text in ActiveCampaign auf das Webinar umgeschrieben ist: Regel löschen. */
+  #ac-optin-host ._form_63 ._form-content > ._form_element:first-child{ display:none !important; }
+  #ac-optin-host ._form_63 form,
+  #ac-optin-host ._form_63 ._form-content{ margin:0 !important; padding:0 !important; width:100% !important; }
+  #ac-optin-host ._form_63 input[type=text],
+  #ac-optin-host ._form_63 input[type=email]{ width:100% !important; box-sizing:border-box !important; }
+  #ac-optin-host ._form_63 button[type=submit],
+  #ac-optin-host ._form_63 ._submit{ width:100% !important; background:var(--accent) !important; }
+</style>
+<div id="ac-optin-host" hidden><div class="_form_63"></div></div>
+<script src="https://akademie-quereinsteiger.activehosted.com/f/embed.php?id=63" charset="utf-8"></script>
+<style id="video-embed">
+  .video-embed{ position:relative; aspect-ratio:16/9; background:#2e2b29; }
+  .video-embed__play{ position:absolute; inset:0; display:block; width:100%; padding:0;
+    margin:0; border:0; background:none; cursor:pointer; font:inherit; color:inherit; }
+  .video-embed__play img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .video-embed__icon{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+    width:74px; height:74px; border-radius:50%; background:var(--accent);
+    box-shadow:0 8px 26px rgba(46,43,41,.4); display:grid; place-items:center;
+    transition:transform .2s ease, background .2s ease; }
+  .video-embed__icon::before{ content:""; width:0; height:0; margin-left:6px; border-style:solid;
+    border-width:13px 0 13px 22px; border-color:transparent transparent transparent #fff; }
+  .video-embed__play:hover .video-embed__icon,
+  .video-embed__play:focus-visible .video-embed__icon{ transform:translate(-50%,-50%) scale(1.07); background:var(--accent-deep); }
+  /* Hinweis sitzt OBEN: das Vorschaubild hat unten einen eingebrannten Untertitel. */
+  .video-embed__hint{ position:absolute; left:0; right:0; top:0; padding:10px 14px 26px;
+    font-size:12px; line-height:1.35; color:#fff; text-align:center;
+    background:linear-gradient(rgba(46,43,41,.88), transparent); }
+  .video-embed iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+  @media (max-width:600px){
+    .video-embed__icon{ width:60px; height:60px; }
+    .video-embed__hint{ font-size:11px; }
+  }
+</style>
+<script>
+(function () {
+  "use strict";
+  var box = document.querySelector(".video-embed[data-yt]");
+  if (!box) return;
+  var btn = box.querySelector(".video-embed__play");
+  if (!btn) return;
+  btn.addEventListener("click", function () {
+    var f = document.createElement("iframe");
+    // nocookie-Domain + autoplay, weil der Klick die bewusste Zustimmung ist.
+    // cc_load_policy=0: Die Untertitel sind fest ins Video eingebrannt — ohne das
+    // legt der Player bei Zuschauern mit aktivierten Auto-Untertiteln eine ZWEITE
+    // Textzeile darueber.
+    f.src = "https://www.youtube-nocookie.com/embed/" + box.dataset.yt + "?autoplay=1&rel=0&cc_load_policy=0";
+    f.title = "Webinar 02.09. KI ist Chefsache";
+    f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    f.referrerPolicy = "strict-origin-when-cross-origin";
+    f.allowFullscreen = true;
+    box.textContent = "";
+    box.appendChild(f);
+  });
+})();
+</script>
+<style id="ki-label">
+  .ki-wrap{ position:relative; }
+  .ki-badge{
+    position:absolute; right:8px; bottom:8px; z-index:2; pointer-events:none;
+    font-family:var(--font-body); font-size:11px; line-height:1; font-weight:600;
+    letter-spacing:.02em; color:#fff; background:rgba(46,43,41,.72);
+    padding:5px 8px; border-radius:6px; backdrop-filter:blur(2px);
+  }
+  .hero > .ki-badge{ right:14px; bottom:14px; }
+  @media (max-width:600px){ .ki-badge{ font-size:10px; padding:4px 6px; } }
+</style>
+<script>
+(function () {
+  "use strict";
+  var TEXT = "KI-generiert";
+  function badge() { var b = document.createElement("span"); b.className = "ki-badge"; b.textContent = TEXT; return b; }
+
+  // <img src="img/ki-…">: Elternelement wird zum Anker, Label oben drauf.
+  Array.prototype.forEach.call(document.querySelectorAll('img[src*="img/ki-"]'), function (img) {
+    var host = img.parentElement;
+    if (!host || host.querySelector(".ki-badge")) return;
+    host.classList.add("ki-wrap");
+    host.appendChild(badge());
+    var alt = img.getAttribute("alt") || "";
+    if (alt.indexOf(TEXT) === -1) img.setAttribute("alt", (alt ? alt + " " : "") + "(" + TEXT + ")");
+  });
+
+  // Hero: das Bild haengt als CSS-Hintergrund an der Sektion, es gibt kein <img>.
+  Array.prototype.forEach.call(document.querySelectorAll(".hero"), function (sec) {
+    if (sec.querySelector(":scope > .ki-badge")) return;
+    var bg = sec.style.backgroundImage || "";
+    if (bg.indexOf("img/ki-") === -1) return;
+    sec.appendChild(badge());
+  });
+})();
+</script>
 </body>
 </html>

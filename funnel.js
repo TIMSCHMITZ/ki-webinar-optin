@@ -43,8 +43,38 @@
   // ===================================================================
   //  OPTIN (Seite 1)
   // ===================================================================
+  // --- ActiveCampaign-Optin (per apply-webinar-patch.mjs) ------------
+  var acOverlay = null;
+  function openOptinAC(c, host) {
+    if (!acOverlay) {
+      var m = el("div", { class: "fnl-modal" });
+      m.innerHTML = head(c.headline || "Fast geschafft!", c.subtext || "") +
+        '<div class="fnl-body"></div>' +
+        (c.privacyNote ? '<p class="fnl-note">' + c.privacyNote + "</p>" : "");
+      host.removeAttribute("hidden");
+      m.querySelector(".fnl-body").appendChild(host);
+      acOverlay = el("div", { class: "fnl-overlay" });
+      acOverlay.appendChild(m);
+      document.body.appendChild(acOverlay);
+      var hide = function () { acOverlay.classList.remove("is-open"); };
+      m.querySelector(".fnl-close").addEventListener("click", hide);
+      acOverlay.addEventListener("click", function (e) { if (e.target === acOverlay) hide(); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") hide(); });
+    }
+    // rAF wird in nicht gezeichneten Tabs gedrosselt -> zusaetzlich per Timeout absichern
+    var show = function () { acOverlay.classList.add("is-open"); };
+    requestAnimationFrame(show);
+    setTimeout(show, 50);
+    setTimeout(function () {
+      var i = acOverlay.querySelector("input[type=text],input[type=email]");
+      if (i) i.focus();
+    }, 260);
+  }
+
   function openOptin() {
     var c = CFG.optin || {};
+    var acHost = document.getElementById("ac-optin-host");
+    if (acHost) return openOptinAC(c, acHost);
     var modal = el("div", { class: "fnl-modal" });
     modal.innerHTML =
       head(c.headline || "Fast geschafft!", c.subtext || "") +

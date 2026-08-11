@@ -4,12 +4,34 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Fast geschafft – bestätige deine Anmeldung | KI ist Chefsache</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="fonts/fonts.css"/>
 <link rel="stylesheet" href="funnel.css"/>
 <style>
-  :root{ --accent: #B85A3F; --accent-deep: #93482F; }
+  :root{ --accent: #ad8053; --accent-deep: #8a6440; }
+</style>
+<style id="afq-theme">
+  :root{
+    --ink:       #2e2b29;   /* AFQ ink        – Headlines, Fließtext-Betonung */
+    --ink-soft:  #595550;   /* AFQ ink-soft   – Fließtext */
+    --line:      #e6ded3;   /* warme Linie statt Neutralgrau */
+    --bg:        #faf8f5;   /* AFQ paper      – warmes Off-White */
+    --bg-gray:   #dde8e5;   /* AFQ teal-light – abgesetzte Abschnitte */
+    --bg-black:  #2e2b29;   /* AFQ ink        – kein Schwarz im CI */
+    --good:      #5d8a7e;   /* AFQ ok         – gedeckt, kein Ampelgrün */
+    --radius:    18px;
+  }
+  /* Flächen und Töne, die funnel.css hart setzt */
+  .hero{ background-color:#f3ece3; }                      /* AFQ sand */
+  .badge-free{ background:#e6efec; }                      /* AFQ ok-bg */
+  .site-footer{ color:#d6cec4; }
+  .footer-fine{ color:#a89d90; }
+  .benefit p{ color:#cfc5b8; }
+  .section--black .btn-note{ color:#cfc5b8; }
+  .testi-card .stars{ color:#c8a15f; }                    /* Gold entsättigt */
+  .fnl-field.has-error input{ border-color:#b4694f; }     /* AFQ warn */
+  .fnl-error{ color:#b4694f; }
+  #ac-optin-host ._form_63 ._error,
+  #ac-optin-host ._form_63 ._error-inner{ color:#b4694f !important; }
 </style>
 </head>
 <body data-screen-label="Seite 2 — Bridge/Upsell">
@@ -37,17 +59,11 @@
     </div>
 
     <div class="media-frame media-shadow" style="max-width:900px;margin:0 auto">
-      <img src="ph/vsl.svg" alt="Video"/>
+      <img src="img/ki-vsl.webp" alt="Video"/>
     </div>
 
     <div class="cta-block" style="margin-top:36px">
       <a class="btn" href="https://calendarlink.com/event/2UbPX" data-booking>Termin in meinen Kalender eintragen<small>Ein Klick – Google, Apple oder Outlook auswählen und speichern.</small></a>
-    </div>
-
-    <div class="trust" style="margin-top:34px">
-      <img src="ph/trust-1.svg" alt=""/><img src="ph/trust-2.svg" alt=""/>
-      <img src="ph/trust-3.svg" alt=""/><img src="ph/trust-4.svg" alt=""/>
-      <img src="ph/trust-5.svg" alt=""/>
     </div>
   </div>
 </section>
@@ -63,11 +79,10 @@
           <h3 class="h3">90 Minuten Live-Demo mit Stefanie & Tim</h3>
           <p>Claude vs. ChatGPT im direkten Vergleich, schlechte Prompts werden live zu guten, und Onboarding wird zum System statt zum Feuerwehreinsatz – mit Zeit für deine Fragen.</p>
           <div class="card-foot">
-            <span class="access"><svg viewBox="0 0 24 24"><path d="M19 18H6a4 4 0 0 1-.6-7.95A5.5 5.5 0 0 1 16.3 9 4 4 0 0 1 19 18Z" opacity=".25"/><path d="M12 9v6m0 0 3-3m-3 3-3-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Im Webinar enthalten</span>
             <span class="badge-free">Kostenlos</span>
           </div>
         </div>
-        <div class="card-img"><img src="ph/content-main.svg" alt="90 Minuten Live-Demo mit Stefanie & Tim"/></div>
+        <div class="card-img"><img src="img/ki-content-main.webp" alt="90 Minuten Live-Demo mit Stefanie & Tim"/></div>
       </div>
     </div>
 
@@ -78,11 +93,11 @@
           <span class="tag-new">(PROMPT)</span>
           <p>Onboarding-Checkliste, 30-Tage-Einarbeitungsplan und Arbeitsanweisungen – zum Kopieren, an deinen Betrieb anpassen und morgen direkt nutzen.</p>
           <div class="card-foot">
-            <span class="access"><svg viewBox="0 0 24 24"><path d="M19 18H6a4 4 0 0 1-.6-7.95A5.5 5.5 0 0 1 16.3 9 4 4 0 0 1 19 18Z" opacity=".25"/><path d="M12 9v6m0 0 3-3m-3 3-3-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Im Webinar enthalten</span>
+            <span class="access"><svg viewBox="0 0 24 24"><path d="M19 18H6a4 4 0 0 1-.6-7.95A5.5 5.5 0 0 1 16.3 9 4 4 0 0 1 19 18Z" opacity=".25"/><path d="M12 9v6m0 0 3-3m-3 3-3-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Erhältst du beim Webinar</span>
             <span class="badge-free">Kostenlos</span>
           </div>
         </div>
-        <div class="card-img"><img src="ph/content-bonus1.svg" alt="3 fertige Prompt-Vorlagen fürs Onboarding"/></div>
+        <div class="card-img"><img src="img/ki-content-bonus1.webp" alt="3 fertige Prompt-Vorlagen fürs Onboarding"/></div>
       </div>
     </div>
 
@@ -92,11 +107,11 @@
           <h3 class="h3">Checklisten & Onboarding-Struktur</h3>
           <p>Konkrete Checklisten und die Struktur, mit der neue Mitarbeiter von Tag 1 an wissen, was zu tun ist.</p>
           <div class="card-foot">
-            <span class="access"><svg viewBox="0 0 24 24"><path d="M19 18H6a4 4 0 0 1-.6-7.95A5.5 5.5 0 0 1 16.3 9 4 4 0 0 1 19 18Z" opacity=".25"/><path d="M12 9v6m0 0 3-3m-3 3-3-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Im Webinar enthalten</span>
+            <span class="access"><svg viewBox="0 0 24 24"><path d="M19 18H6a4 4 0 0 1-.6-7.95A5.5 5.5 0 0 1 16.3 9 4 4 0 0 1 19 18Z" opacity=".25"/><path d="M12 9v6m0 0 3-3m-3 3-3-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Erhältst du beim Webinar</span>
             <span class="badge-free">Kostenlos</span>
           </div>
         </div>
-        <div class="card-img"><img src="ph/content-bonus2.svg" alt="Checklisten & Onboarding-Struktur"/></div>
+        <div class="card-img"><img src="img/ki-content-bonus2.webp" alt="Checklisten & Onboarding-Struktur"/></div>
       </div>
     </div>
 
@@ -161,7 +176,7 @@
 <footer class="site-footer">
   <div class="wrap">
     <a class="brand" href="index.html"><span class="b1">KI IST</span><span class="b2">CHEFSACHE</span></a>
-    <div class="footer-links"><a href="#impressum">Impressum</a> &nbsp;|&nbsp; <a href="#datenschutz">Datenschutz</a></div>
+    <div class="footer-links"><a href="impressum.html">Impressum</a> &nbsp;|&nbsp; <a href="datenschutz.html">Datenschutz</a></div>
     <p class="footer-fine">Diese Website ist kein Teil der Facebook-Website oder von Meta Platforms, Inc. und wird in keiner Weise von Meta unterstützt. Facebook und Instagram sind Marken von Meta Platforms, Inc.<br/>© 2026 Stefanie Sonntag & Tim Schmitz</p>
   </div>
 </footer>
@@ -178,5 +193,41 @@ window.FUNNEL = { booking: {
 } };
 </script>
 <script src="funnel.js"></script>
+<style id="ki-label">
+  .ki-wrap{ position:relative; }
+  .ki-badge{
+    position:absolute; right:8px; bottom:8px; z-index:2; pointer-events:none;
+    font-family:var(--font-body); font-size:11px; line-height:1; font-weight:600;
+    letter-spacing:.02em; color:#fff; background:rgba(46,43,41,.72);
+    padding:5px 8px; border-radius:6px; backdrop-filter:blur(2px);
+  }
+  .hero > .ki-badge{ right:14px; bottom:14px; }
+  @media (max-width:600px){ .ki-badge{ font-size:10px; padding:4px 6px; } }
+</style>
+<script>
+(function () {
+  "use strict";
+  var TEXT = "KI-generiert";
+  function badge() { var b = document.createElement("span"); b.className = "ki-badge"; b.textContent = TEXT; return b; }
+
+  // <img src="img/ki-…">: Elternelement wird zum Anker, Label oben drauf.
+  Array.prototype.forEach.call(document.querySelectorAll('img[src*="img/ki-"]'), function (img) {
+    var host = img.parentElement;
+    if (!host || host.querySelector(".ki-badge")) return;
+    host.classList.add("ki-wrap");
+    host.appendChild(badge());
+    var alt = img.getAttribute("alt") || "";
+    if (alt.indexOf(TEXT) === -1) img.setAttribute("alt", (alt ? alt + " " : "") + "(" + TEXT + ")");
+  });
+
+  // Hero: das Bild haengt als CSS-Hintergrund an der Sektion, es gibt kein <img>.
+  Array.prototype.forEach.call(document.querySelectorAll(".hero"), function (sec) {
+    if (sec.querySelector(":scope > .ki-badge")) return;
+    var bg = sec.style.backgroundImage || "";
+    if (bg.indexOf("img/ki-") === -1) return;
+    sec.appendChild(badge());
+  });
+})();
+</script>
 </body>
 </html>
