@@ -70,6 +70,14 @@
     .hero .btn{ padding:16px 20px; }
   }
 </style>
+<style id="testi-tune">
+  .testi-card .testi-body{ padding:24px 24px 26px; }
+  .testi-card .testi-body::before{
+    content:"\201D"; display:block; font-family:var(--font-head); font-weight:800;
+    font-size:54px; line-height:.62; color:#a8c7bd; margin-bottom:12px;
+  }
+  .testi-card .stars{ margin-bottom:4px; }
+</style>
 </head>
 <body data-screen-label="Seite 1 — Optin">
 
@@ -280,13 +288,40 @@
         </div>
       </div>
       <div class="media-frame media-shadow">
-        <img src="ph/founder-photo.svg" alt="Stefanie Sonntag & Tim Schmitz"/>
+        <img src="img/founder-photo.webp" alt="Stefanie Sonntag & Tim Schmitz"/>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ FINAL CTA (black) ============ -->
+<!-- ============ TESTIMONIALS (per apply-webinar-patch.mjs; das Template hat auf Seite 1 keine) ============ -->
+<section class="section" id="testi-p1">
+  <div class="wrap">
+    <div class="sec-intro"><h2 class="h2">Das sagen Teilnehmer und Kunden über Stefanie & Tim</h2><hr class="rule"/></div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-body"><div class="stars">★★★★★</div><p class="testi-name">Kathrin</p><p class="testi-text">Die Onlineschulung bei Frau Sonntag hat mir sehr gut gefallen. Fachlich sehr kompetent, verständlich und praxisnah. Klare Empfehlung!</p></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-body"><div class="stars">★★★★★</div><p class="testi-name">Thomas Gorn</p><p class="testi-text">Praxisnah und lebendig gestaltet. Frau Sonntag ging individuell auf unsere Fragen ein und schuf eine motivierende Lernatmosphäre.</p></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-body"><div class="stars">★★★★★</div><p class="testi-name">Sophie Rostock</p><p class="testi-text">Eine Online-Schulung auf fachlich hohem Niveau. Sehr aufschlussreich, spannend gerade für Quereinsteiger.</p></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-body"><div class="stars">★★★★★</div><p class="testi-name">Harry Bähren</p><p class="testi-text">IT, Systeme und saubere Prozesse. Das bekommt man hier. So was braucht man. Das nenne ich Digitalisierung.</p></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-body"><div class="stars">★★★★★</div><p class="testi-name">Hans-Willi Ober</p><p class="testi-text">Tim weiss wovon er redet, ist immer gut vorbereitet und bringt Lösungskonzepte mit ein, an die man vorher nicht dran gedacht hätte.</p></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-body"><div class="stars">★★★★★</div><p class="testi-name">Paul Teeuwen</p><p class="testi-text">Von Software profitieren und Geld sparen. Gute Beratung und beste Betreuung.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section section--black">
   <div class="wrap">
     <div class="media-text flip">
