@@ -70,6 +70,23 @@
     .hero .btn{ padding:16px 20px; }
   }
 </style>
+<style id="hero-legibility">
+  .hero::before{
+    content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+    background:linear-gradient(180deg,
+      rgba(250,248,245,.55) 0%,
+      rgba(250,248,245,.72) 45%,
+      rgba(250,248,245,.86) 100%);
+  }
+  @media (max-width:860px){
+    .hero::before{
+      background:linear-gradient(180deg,
+        rgba(250,248,245,.82) 0%,
+        rgba(250,248,245,.91) 40%,
+        rgba(250,248,245,.96) 100%);
+    }
+  }
+</style>
 <style id="testi-tune">
   .testi-card .testi-body{ padding:24px 24px 26px; }
   .testi-card .testi-body::before{
