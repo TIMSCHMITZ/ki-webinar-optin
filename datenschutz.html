@@ -534,6 +534,10 @@
     addFooterLink();
     if (granted()) loadPixel();
     else if (!read()) show();
+    // Ablehnung liegt vor: bei jedem Aufruf aufraeumen. Ein _fbp kann noch von
+    // einer frueheren Zustimmung stammen oder von einer anderen Subdomain gesetzt
+    // worden sein — der Widerruf soll auch dann greifen.
+    else revokePixel();
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
